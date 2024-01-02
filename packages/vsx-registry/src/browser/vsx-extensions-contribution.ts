@@ -26,7 +26,7 @@ import { ColorRegistry } from '@theia/core/lib/browser/color-registry';
 import { Color } from '@theia/core/lib/common/color';
 import { FrontendApplication } from '@theia/core/lib/browser/frontend-application';
 import { FrontendApplicationContribution } from '@theia/core/lib/browser/frontend-application-contribution';
-import { MenuModelRegistry, MessageService, nls } from '@theia/core/lib/common';
+import { CompoundMenuNodeRole, MenuModelRegistry, MessageService, nls } from '@theia/core/lib/common';
 import { FileDialogService, OpenFileDialogProps } from '@theia/filesystem/lib/browser';
 import { LabelProvider, PreferenceService, QuickPickItem, QuickInputService, CommonMenus } from '@theia/core/lib/browser';
 import { VscodeCommands } from '@theia/plugin-ext-vscode/lib/browser/plugin-vscode-commands-contribution';
@@ -142,6 +142,9 @@ export class VSXExtensionsContribution extends AbstractViewContribution<VSXExten
         menus.registerMenuAction(VSXExtensionsContextMenu.INSTALL, {
             commandId: VSXExtensionsCommands.INSTALL_ANOTHER_VERSION.id,
             label: nls.localizeByDefault('Install Another Version...'),
+        });
+        menus.registerSubmenu(VSXExtensionsContextMenu.CONTRIBUTION, '', {
+            role: CompoundMenuNodeRole.Group,
         });
     }
 
