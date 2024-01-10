@@ -18,7 +18,7 @@ import * as theia from '@theia/plugin';
 import { RPCProtocol } from '../common/rpc-protocol';
 import { EnvMain, PLUGIN_RPC_CONTEXT } from '../common/plugin-api-rpc';
 import { QueryParameters } from '../common/env';
-import { v4 } from 'uuid';
+import { generateUuid } from '@theia/core/lib/common/uuid';
 
 export abstract class EnvExtImpl {
     private proxy: EnvMain;
@@ -33,8 +33,8 @@ export abstract class EnvExtImpl {
 
     constructor(rpc: RPCProtocol) {
         this.proxy = rpc.getProxy(PLUGIN_RPC_CONTEXT.ENV_MAIN);
-        this.envSessionId = v4();
-        this.envMachineId = v4();
+        this.envSessionId = generateUuid();
+        this.envMachineId = generateUuid();
         this._remoteName = undefined;
     }
 

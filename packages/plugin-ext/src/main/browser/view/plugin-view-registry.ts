@@ -44,7 +44,7 @@ import { ThemeIcon } from '@theia/monaco-editor-core/esm/vs/platform/theme/commo
 import { WebviewView, WebviewViewResolver } from '../webview-views/webview-views';
 import { WebviewWidget, WebviewWidgetIdentifier } from '../webview/webview';
 import { CancellationToken } from '@theia/core/lib/common/cancellation';
-import { v4 } from 'uuid';
+import { generateUuid } from '@theia/core/lib/common/uuid';
 import { nls } from '@theia/core';
 import { TheiaDockPanel } from '@theia/core/lib/browser/shell/theia-dock-panel';
 import { Deferred } from '@theia/core/lib/common/promise-util';
@@ -425,7 +425,7 @@ export class PluginViewRegistry implements FrontendApplicationContribution {
     protected async createNewWebviewView(viewId: string): Promise<WebviewView> {
         const webview = await this.widgetManager.getOrCreateWidget<WebviewWidget>(
             WebviewWidget.FACTORY_ID, <WebviewWidgetIdentifier>{
-                id: v4(),
+                id: generateUuid(),
                 viewId,
             });
         webview.setContentOptions({ allowScripts: true });

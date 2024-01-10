@@ -6,8 +6,7 @@
     "@theia/core": "1.45.0",
     "@theia/editor": "1.45.0",
     "@theia/filesystem": "1.45.0",
-    "@theia/monaco": "1.45.0",
-    "uuid": "^8.3.2"
+    "@theia/monaco": "1.45.0"
   },
   "publishConfig": {
     "access": "public"

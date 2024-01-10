@@ -18,7 +18,7 @@ import { interfaces } from '@theia/core/shared/inversify';
 import { WebviewWidget, WebviewWidgetIdentifier, WebviewWidgetExternalEndpoint } from './webview';
 import { WebviewEnvironment } from './webview-environment';
 import { StorageService } from '@theia/core/lib/browser';
-import { v4 } from 'uuid';
+import { generateUuid } from '@theia/core/lib/common/uuid';
 
 export class WebviewWidgetFactory {
 
@@ -46,7 +46,7 @@ export class WebviewWidgetFactory {
         const key = 'plugin-view-registry.origin.' + viewId;
         const origin = await storageService.getData<string>(key);
         if (!origin) {
-            const newOrigin = v4();
+            const newOrigin = generateUuid();
             storageService.setData(key, newOrigin);
             return newOrigin;
         } else {
