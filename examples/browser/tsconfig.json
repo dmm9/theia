@@ -1,6 +1,6 @@
 {
   "extends": "../../configs/base.tsconfig",
-  "include": [ ],
+  "include": [],
   "compilerOptions": {
     "composite": true
   },
@@ -37,9 +37,6 @@
     },
     {
       "path": "../../packages/getting-started"
-    },
-    {
-      "path": "../../packages/git"
     },
     {
       "path": "../../packages/keymaps"
