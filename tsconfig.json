@@ -1,6 +1,6 @@
 {
   "extends": "./configs/base.tsconfig.json",
-  "include": [ ],
+  "include": [],
   "compilerOptions": {
     "composite": true,
     "allowJs": true
@@ -65,6 +65,9 @@
     },
     {
       "path": "packages/debug"
+    },
+    {
+      "path": "packages/dev-container"
     },
     {
       "path": "packages/editor"

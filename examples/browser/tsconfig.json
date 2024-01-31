@@ -1,6 +1,6 @@
 {
   "extends": "../../configs/base.tsconfig",
-  "include": [ ],
+  "include": [],
   "compilerOptions": {
     "composite": true
   },
@@ -22,6 +22,9 @@
     },
     {
       "path": "../../packages/debug"
+    },
+    {
+      "path": "../../packages/dev-container"
     },
     {
       "path": "../../packages/editor"

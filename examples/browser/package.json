@@ -26,6 +26,7 @@
     "@theia/console": "1.45.0",
     "@theia/core": "1.45.0",
     "@theia/debug": "1.45.0",
+    "@theia/dev-container": "1.45.0",
     "@theia/editor": "1.45.0",
     "@theia/editor-preview": "1.45.0",
     "@theia/file-search": "1.45.0",
