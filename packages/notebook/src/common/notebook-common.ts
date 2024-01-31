@@ -19,7 +19,7 @@ import { MarkdownString } from '@theia/core/lib/common/markdown-rendering/markdo
 import { BinaryBuffer } from '@theia/core/lib/common/buffer';
 import { UriComponents } from '@theia/core/lib/common/uri';
 
-export interface NotebookCommand {
+export interface NotebookCommand extends Command {
     id: string;
     title?: string;
     tooltip?: string;
